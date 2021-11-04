@@ -32,7 +32,7 @@ public class StudentController {
     @GetMapping(value = "/delete/{id}")
     public String deleteStudent(@PathVariable(value = "id") int id) {
         studentService.deleteStudent(id);
-        return "students";
+        return "redirect:/students";
     }
 
     @GetMapping(value = "/update/{id}")
@@ -45,7 +45,7 @@ public class StudentController {
     @PostMapping(value = "/form")
     public String updateStudent(Student student){
         studentService.updateStudent(student);
-        return "students";
+        return "redirect:/students";
     }
 
     @GetMapping(value = "/create")
@@ -58,7 +58,7 @@ public class StudentController {
     @PostMapping(value = "/form")
     public String createStudent(Student student){
         studentService.createStudent(student);
-        return "students";
+        return "redirect:/students";
     }
 
 }
