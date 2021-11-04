@@ -25,7 +25,7 @@ public class StudentService {
     }
 
     public void updateStudent(Student student){
-        Student updatedStudent = studentRepository.findById(student.getId()).get();
+        Student updatedStudent = studentRepository.findById(student.getId());
         updatedStudent.setMark(student.getMark());
         updatedStudent.setName(student.getName());
         studentRepository.save(updatedStudent);
@@ -33,5 +33,9 @@ public class StudentService {
 
     public List<Student> findAllStudent(){
         return studentRepository.findAll();
+    }
+
+    public Student findById(int id){
+        return studentRepository.findById(id);
     }
 }
