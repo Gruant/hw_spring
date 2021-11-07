@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Все продукты</title>
+</head>
+<body>
+<table border="1" style="width:300px">
+  <tr>
+    <td align="center">ID</td>
+    <td align="center">NAME</td>
+    <td align="center">COST</td>
+    <td align="center">ACTION</td>
+  </tr>
+  <tr th:each="student: ${students}">
+    <td th:text="${student.id}"></td>
+    <td th:text="${student.name}"></td>
+    <td th:text="${student.mark}"></td>
+    <td align="center">
+      <button type="submit" ><a th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a></button>
+    </td>
+    <td align="center">
+      <button type="submit" ><a th:href="@{/students/update/{id}(id=${student.id})">Update</a></button>
+    </td>
+  </tr>
+  </tbody>
+  <br>
+  <button type="submit" ><a th:href="@{/students/create}">Create</a></button>
+</table>
+</body>
+</html>
+© 2021 GitHub, Inc.
